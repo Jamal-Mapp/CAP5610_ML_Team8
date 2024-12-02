@@ -1,2 +1,2 @@
-# Download training data using: kaggle competitions download -c asl-signs
-# Download testing data using: 
+ Download training data using: kaggle competitions download -c asl-signs
+# Download testing data from here: https://www.kaggle.com/datasets/sohier/461054610546105 
