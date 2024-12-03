@@ -115,6 +115,7 @@ def collate(batch):
 train_dataloader = DataLoader(train_dataset, batch_size=128, shuffle=True, collate_fn=collate)
 val_dataloader = DataLoader(val_dataset, batch_size=128, shuffle=True, collate_fn=collate)
 
+
 class PositionalEncoding(nn.Module):
 
     def __init__(self, d_model: int, dropout: float = 0.1, max_len: int = 5000):
