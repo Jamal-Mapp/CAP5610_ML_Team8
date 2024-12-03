@@ -20,7 +20,7 @@ from tqdm import tqdm # Progress bar
 device = 'cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu'
 
 
-DATASET_DIR = Path('/home/ad/ru501950/workspace/SignLanguage')
+DATASET_DIR = Path('~/workspace/SignLanguage')
 
 ROWS_PER_FRAME = 543  # number of landmarks per frame
 
