@@ -16,6 +16,9 @@ setup kaggle api tokens before download the data
 Download training data using: kaggle competitions download -c asl-signs
 Download testing data from here: kaggle datasets download sohier/461054610546105
 
+# put train data to folder 'train', and test data to folder 'test' and update the ASL_DIR in preprocess.py
+python preprocess.py
+
 train
 python trainer.py
 
