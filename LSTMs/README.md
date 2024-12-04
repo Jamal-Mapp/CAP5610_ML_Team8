@@ -1,7 +1,7 @@
 This set up requires for the dataset to be pre-donwloaded and unzipped in a directory name asl-signs.
 the dataset can be found at https://www.kaggle.com/competitions/asl-signs/data
 Once the dataset is present and unzipped, make sure the tf-lstm-final.ipynb is in the same level as asl-signs and testing data.
-create "asl-signs" and "test-ml" if they are not already there where "asl-signs" will contain the training data and "test-ml" which will contain the testing data respectively. 
+create "asl-signs" and "test-ml" if they are not already there where "asl-signs" will contain the training data and "test-ml" which will contain the testing data respectively.  
 
 asl-signs should contain train.csv (which has the labels and formatting), 
 sign\_to\_prediction\_index\_map.json (containing the 250 classes), 
