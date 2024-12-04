@@ -93,7 +93,7 @@ The validation F1-Score of 0.6726 suggests the model performs well across classe
 - To modify hyperparameters such as learning rate, batch size, or the number of epochs, update the corresponding variables in train_mlp.py.
 - Ensure all dependencies are installed and input files are correctly placed in the working directory before running the code.
 
-## **Model Testing and Evaluation
+## **Model Testing and Evaluation**
 After training the MLP model, I attempted to test its performance using a separate test dataset. However, I encountered several challenges during this phase. The main issue was the absence of feature data files; the test data file labels.parquet only contained the columns 'path', 'sign', and 'Usage', but the model required an input feature matrix with 3258 features. Without the actual feature data, the model could not make predictions, causing errors and halting progress.
 
 I tried to load the feature data from the paths specified in the 'path' column, but these files were either nonexistent or inaccessible, making it impossible to provide the necessary input features for model testing. Additionally, I faced memory management issues when attempting to load all feature data into memory simultaneously. Implementing an on-demand data loading strategy helped reduce memory usage.
