@@ -92,3 +92,12 @@ The validation F1-Score of 0.6726 suggests the model performs well across classe
 
 - To modify hyperparameters such as learning rate, batch size, or the number of epochs, update the corresponding variables in train_mlp.py.
 - Ensure all dependencies are installed and input files are correctly placed in the working directory before running the code.
+
+## **Model Testing and Evaluation
+After training the MLP model, I attempted to test its performance using a separate test dataset. However, I encountered several challenges during this phase. The main issue was the absence of feature data files; the test data file labels.parquet only contained the columns 'path', 'sign', and 'Usage', but the model required an input feature matrix with 3258 features. Without the actual feature data, the model could not make predictions, causing errors and halting progress.
+
+I tried to load the feature data from the paths specified in the 'path' column, but these files were either nonexistent or inaccessible, making it impossible to provide the necessary input features for model testing. Additionally, I faced memory management issues when attempting to load all feature data into memory simultaneously. Implementing an on-demand data loading strategy helped reduce memory usage.
+
+There were also label encoding inconsistencies; the LabelEncoder was fitted on numerical labels during training, but the test data contained string labels like 'go' and 'read'. I addressed this by ensuring that both training and testing used string labels and the same LabelEncoder. However, the test data included unseen labels not present in the training data, causing further encoding issues, which I mitigated by filtering out these unknown labels during testing.
+
+In summary, while the training process was successful and involved careful hyperparameter tuning to optimize the model's performance, the testing phase highlighted the importance of having complete and consistent datasets. For future projects, I plan to secure all necessary data files, optimize memory management when handling large-scale data, ensure data consistency across different stages, and incorporate thorough data validation steps to promptly identify and resolve issues.
