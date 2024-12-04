@@ -1,3 +1,20 @@
+This set up requires for the dataset to be pre-donwloaded and unzipped in a directory name asl-signs.
+the dataset can be found at https://www.kaggle.com/competitions/asl-signs/data
+Once the dataset is present and unzipped, make sure the tf-lstm-final.ipynb is in the same level as asl-signs and testing data.
+create "asl-signs" and "test-ml" if they are not already there where "asl-signs" will contain the training data and "test-ml" which will contain the testing data respectively. 
+
+asl-signs should contain train.csv (which has the labels and formatting), 
+sign\_to\_prediction\_index\_map.json (containing the 250 classes), 
+and train\_landmark\_files (the actual dataset in a parquet format). 
+the test-ml should contain 3 things, labels.parquet (which has the labels and formatting), 
+sign\_to\_prediction\_index\_map.json (containing the 250 classes), 
+and test\_landmark\_files (the actual dataset in a parquet format).
+
+For the training and testing landmark folders, they contain many folders which are numbered which have parquet files inside.
+The data is automatically pulled from there and in the python file
+pip install the libraries above and install python 3.9.2. then you can run the file
+
+
 This Project utilizes Python 3.9.2 alongside Tensorflow which is a library for building and training the model. 
 I will be utilizing tensorflow-keras 2.10.0 on my computer with a GPU as it was easiest to work on this slightly older version of python as 
 tensorflow-keras 2.10.0 was the last version to be updated on windows to have GPU support built into the library. 
@@ -19,12 +36,7 @@ Finally, these were all installed via a python virtualenv which can be setup in 
 import sys print(sys.version) #3.9.20 
 \end{verbatim}
 
-pip install the libraries above and install python 3.9.2. 
-create 2 folders called "asl-signs" which will contain the training data and "test-ml" which will contain the testing data. 
-asl-signs should contain train.csv (which has the labels and formatting), 
-sign\_to\_prediction\_index\_map.json (containing the 250 classes), 
-and train\_landmark\_files (the actual dataset in a parquet format). 
-The parquet files will be grouped by an additional group of folders containing numbers. 
+ 
 Define and train the LSTM model then save the best model and preprocessing tools. 
 Optionally, if a GPU is available, leverage it to accelerate training the model 
 (one should be able to do so as long as they has access to a device/network with a GPU). 
